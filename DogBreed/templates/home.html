@@ -30,6 +30,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
+            
             <!-- Logo and responsive toggle -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -38,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                 	<span class="glyphicon glyphicon-fire"></span> 
                 	Logo
                 </a>
@@ -47,18 +48,19 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#">Search</a>
+                        <a href="/searchResults">Search</a>
                     </li>
 					
                 </ul>
 
 				<!-- Search -->
-				<form class="navbar-form navbar-right" role="search">
+				<form class="navbar-form navbar-right" role="search" method="POST">
+                    {% csrf_token%}
 					<div class="form-group">
-						<input type="text" class="form-control">
+						<input type="text" name="query" class="form-control">
 					</div>
 					<button type="submit" class="btn btn-default">Search</button>
 				</form>
@@ -80,22 +82,22 @@
 			</ol>
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<h1>Dog with man1</h1>
-					<p>abab.</p>
+					<h1>Find the dog</h1>
+					<p>that you like</p>
 					<p></p>
-                    <a class="btn btn-primary" href="#">Search Now</a>
+                    <a class="btn btn-primary" href="/searchResults">Search Now</a>
 				</div>
 				<div class="item">
-					<h1>Dog with man2</h1>
-					<p>ssss.</p>
+					<h1>Raise the dog with care</h1>
+					<p>as you promised</p>
 					<p></p>
-                    <a class="btn btn-primary" href="#">Search Now</a>
+                    <a class="btn btn-primary" href="/searchResults">Search Now</a>
 				</div>
 				<div class="item">
-					<h1>Dog with man3</h1>
-					<p>dcdc.</p>
+					<h1>Love the dog lifelong</h1>
+					<p>like forever</p>
 					<p></p>
-                    <a class="btn btn-primary" href="#">Search Now</a>
+                    <a class="btn btn-primary" href="/searchResults">Search Now</a>
 				</div>			  
 			</div>
 			<a class="left carousel-control" href="#feature-carousel" role="button" data-slide="prev">
@@ -128,62 +130,64 @@
         <!-- Feature Row -->
         <div class="row">
             <article class="col-md-4 article-intro">
-                <a href="#">
-                    <img class="img-responsive img-rounded" src="holder.js/700x300" alt="">
+                <a href="https://www.google.com/search?q=akita&tbm=isch&hl=en&tbs=il:cl&sa=X&ved=0CAAQ1vwEahcKEwiQ3tqy-Z_5AhUAAAAAHQAAAAAQAg&biw=942&bih=910#imgrc=atT6GPXBWhc-GM">
+                    <img class="img-responsive img-rounded" src="https://s3.us-west-004.backblazeb2.com/encurate/static/dogbreed/Akita.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">DogA</a>
+                    <a href="https://www.google.com/search?q=akita&tbm=isch&hl=en&tbs=il:cl&sa=X&ved=0CAAQ1vwEahcKEwiQ3tqy-Z_5AhUAAAAAHQAAAAAQAg&biw=942&bih=910#imgrc=atT6GPXBWhc-GM">Akita</a>
                 </h3>
-                <p>info.</p>
+                <p>Type :Working Dogs</p>
+               
             </article>
             <article class="col-md-4 article-intro">
-                <a href="#">
-                    <img class="img-responsive img-rounded" src="holder.js/700x300" alt="">
+                <a href="https://commons.wikimedia.org/wiki/File:Bulldog_inglese.jpg">
+                    <img class="img-responsive img-rounded" src="https://s3.us-west-004.backblazeb2.com/encurate/static/dogbreed/Bulldog.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">DogB</a>
+                    <a href="https://commons.wikimedia.org/wiki/File:Bulldog_inglese.jpg">Bulldog</a>
                 </h3>
-                <p>info.</p>
+                <p>Type :Companion Dogs</p>
+                
             </article>
 
             <article class="col-md-4 article-intro">
-                <a href="#">
-                    <img class="img-responsive img-rounded" src="holder.js/700x300" alt="">
+                <a href="https://upload.wikimedia.org/wikipedia/commons/4/4d/Goldador_dog_Holly.jpg">
+                    <img class="img-responsive img-rounded" src="https://s3.us-west-004.backblazeb2.com/encurate/static/dogbreed/Goldador.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">DogC</a>
+                    <a href="https://upload.wikimedia.org/wikipedia/commons/4/4d/Goldador_dog_Holly.jpg">Goldador</a>
                 </h3>
-                <p>info.</p>
+                <p>Type :Hybrid Dogs</p>
             </article>
         </div>
         <div class="row">
             <article class="col-md-4 article-intro">
-                <a href="#">
-                    <img class="img-responsive img-rounded" src="holder.js/700x300" alt="">
+                <a href="https://upload.wikimedia.org/wikipedia/commons/b/b5/Shetland_Sheepdog_sable.jpg">
+                    <img class="img-responsive img-rounded" src="https://s3.us-west-004.backblazeb2.com/encurate/static/dogbreed/Shetland_Sheepdog.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">DogD</a>
+                    <a href="https://upload.wikimedia.org/wikipedia/commons/b/b5/Shetland_Sheepdog_sable.jpg">Shetland Sheepdog</a>
                 </h3>
-                <p>info.</p>
+                <p>Type :Herding Dogs</p>
             </article>
             <article class="col-md-4 article-intro">
-                <a href="#">
-                    <img class="img-responsive img-rounded" src="holder.js/700x300" alt="">
+                <a href="https://upload.wikimedia.org/wikipedia/commons/e/e7/01_Australian_Silky_Terrier.jpg">
+                    <img class="img-responsive img-rounded" src="https://s3.us-west-004.backblazeb2.com/encurate/static/dogbreed/Silky_Terrier.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">DogE</a>
+                    <a href="https://upload.wikimedia.org/wikipedia/commons/e/e7/01_Australian_Silky_Terrier.jpg">Silky Terrier</a>
                 </h3>
-                <p>info.</p>
+                <p>Type :Companion Dogs</p>
             </article>
 
             <article class="col-md-4 article-intro">
-                <a href="#">
-                    <img class="img-responsive img-rounded" src="holder.js/700x300" alt="">
+                <a href="https://upload.wikimedia.org/wikipedia/commons/b/b6/Whippet_dog_-_front.jpg">
+                    <img class="img-responsive img-rounded" src="https://s3.us-west-004.backblazeb2.com/encurate/static/dogbreed/Whippet.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="#">DogF</a>
+                    <a href="https://upload.wikimedia.org/wikipedia/commons/b/b6/Whippet_dog_-_front.jpg">Whippet</a>
                 </h3>
-                <p>info.</p>
+                <p>Type :Hound Dogs</p>
             </article>
         </div>
         <!-- /.row -->
