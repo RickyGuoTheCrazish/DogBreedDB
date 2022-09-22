@@ -1,0 +1,1 @@
+web gunicorn DogBreedDB.wsgi:application --log-file -
